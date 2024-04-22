@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+
+     <script>
+        function relogio()
+        {
+            var tempo=new Date();
+
+            var hora=tempo.getHours();
+            if(hora<10){hora="0"+hora;}
+
+            var minuto=tempo.getMinutes();
+            if(minuto<10){minuto="0"+minuto;}
+
+            var segundo=tempo.getSeconds();
+            if(segundo<10){
+                segundo="0"+segundo;}
+
+            var horario=hora+ ":" +minuto+ ":" +segundo;
+            document.getElementById("rel").value=horario;
+        }
+
+        var tempo=setInterval(relogio,1000);
+    </script>
+
+</head>
+<body>
+    <input type="text" id="rel" readonly>
+    
+</body>
+</html>
